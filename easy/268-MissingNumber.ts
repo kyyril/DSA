@@ -54,3 +54,16 @@ function missingNumber(nums: number[]): number {
 // All the numbers of nums are unique.
 
 // Follow up: Could you implement a solution using only O(1) extra space complexity and O(n) runtime complexity?
+
+// General Solution
+// function missingNumber(nums: number[]): number {
+//     const n = nums.length
+
+//     for (let i = 0; i <= n; i++) {
+//         if (!nums.includes(i)) {
+//             return i
+//         }
+//     }
+
+//     return -1
+// }
