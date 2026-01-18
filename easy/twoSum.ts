@@ -37,3 +37,16 @@ function twoSum(nums: number[], target: number): number[] {
 // Example 3:
 // Input: nums = [3,3], target = 6
 // Output: [0,1]
+
+// console.log(twoSumm(nums, 10));
+
+// brute force
+function twoSumm(nums: number[], target: number) {
+  for (let i = 0; i <= nums.length - 1; i++) {
+    for (let j = i + 1; j <= nums.length - 1; j++) {
+      if (nums[i] + nums[j] == target) {
+        return [nums[i], nums[j]];
+      }
+    }
+  }
+}

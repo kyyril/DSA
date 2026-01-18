@@ -3,13 +3,13 @@ const n = 5;
 for (let i = 1; i <= n; i++) {
   let line = "";
 
-  // spasi letf
-  for (let s = 1; s <= n - i; s++) {
+  //space
+  for (let j = 1; j <= n - i; j++) {
     line += " ";
   }
 
-  // star
-  for (let b = 1; b <= 2 * i - 1; b++) {
+  //star
+  for (let k = 1; k <= 2 * i - 1; k++) {
     line += "*";
   }
 
