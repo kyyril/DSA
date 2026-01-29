@@ -2,7 +2,7 @@ package main
 import "fmt"
 
 func main (){
-	s, t :=  "anagram", "nagarap"
+	s, t :=  "anagram", "nagaram"
 	result := isAnagram(s,t)
 	fmt.Println(result)
 }
