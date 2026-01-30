@@ -39,20 +39,22 @@ func (c *Codec) Encode(strs []string) string {
 
 // 5#hello5#world
 // use pointer
-func (c *Codec) Decode(str string) []string {
-	var res = []string{}
+func (c *Codec) Decode(str string) string {
+	var res string
 	i := 0
 	for i < len(str) {
-		j := i // 1
+		j := i
 		for str[j] != '#' {
 			j++
 		}
-		length, _ := strconv.Atoi(str[i:j]) // 1 -> 6
-		j++ //start after #
-		res = append(res, str[j:j+length])//append hello
+		length, _ := strconv.Atoi(str[i:j])
+		j++
+		res += str[j:j+length]
 
-		i = j + length
-
+		i = j + length //move next word
+		if i < len(str) {
+			res += " "
+		}
 	}
 	return res
 }
