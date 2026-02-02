@@ -26,7 +26,7 @@ func swipeRight(nums []int) []int {
     return nums
 }
 
-// store firt num
+// store first num
 // [1,2,3] 
 // [2,2,3] 0 
 // [2,3,3] 1
