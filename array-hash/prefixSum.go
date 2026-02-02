@@ -15,7 +15,7 @@ func prefixSum(nums []int) []int {
 		//prev prefix + current nums
 	}
 	return prefix
-}
+} 
 
 // When to use?
 
