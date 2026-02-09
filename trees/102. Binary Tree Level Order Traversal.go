@@ -1,11 +1,7 @@
 package main
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
 
+//BFS
 func levelOrder(root *TreeNode) [][]int {
 	if root == nil {
 		return [][]int{}

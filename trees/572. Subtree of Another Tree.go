@@ -11,14 +11,14 @@ func isSubtree(root *TreeNode, subRoot *TreeNode) bool {
 		return false
 	}
 
-	if isSameTree(root, subRoot) {
+	if isSame(root, subRoot) {
 		return true
 	}
 
 	return isSubtree(root.Left, subRoot) || isSubtree(root.Right, subRoot)
 }
 
-func isSameTree(p *TreeNode, q *TreeNode) bool {
+func isSame(p *TreeNode, q *TreeNode) bool {
 	if p == nil && q == nil {
 		return true
 	}
