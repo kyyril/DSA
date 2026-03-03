@@ -18,5 +18,4 @@ func main() {
 			path = path[:len(path)-1]
 		}
 	}
-	dfs(0)
 }
