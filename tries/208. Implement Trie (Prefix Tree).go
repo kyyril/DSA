@@ -2,17 +2,17 @@ package main
 
 import "fmt"
 
-type TrieNode struct {
-	children [26]*TrieNode
+type Node struct {
+	children [26]*Node
 	isEnd    bool
 }
 
 type Trie struct {
-	root *TrieNode
+	root *Node
 }
 
 func Constructor() Trie {
-	return Trie{root: &TrieNode{}}
+	return Trie{root: &Node{}}
 }
 
 // create path one byone
@@ -21,7 +21,7 @@ func (this *Trie) Insert(word string) {
 	for i := 0; i < len(word); i++ {
 		index := word[i] - 'a' // Convert 'a'-'z' ke 0-25
 		if curr.children[index] == nil {
-			curr.children[index] = &TrieNode{}
+			curr.children[index] = &Node{}
 		}
 		curr = curr.children[index]
 	}
@@ -58,7 +58,7 @@ func (this *Trie) StartsWith(prefix string) bool {
 }
 
 func main() {
-	trie := &Trie{&TrieNode{}}
+	trie := &Trie{&Node{}}
 	trie.Insert("apple")
 	trie.Search("apple") // return True
 	trie.Search("app")  // return False
