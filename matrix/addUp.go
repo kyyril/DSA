@@ -18,6 +18,8 @@ func main (){
 func addMatrix (A, B [][]int) [][]int {
 	rows := len(A)
 	cols := len(A[0])
+	fmt.Println(rows)
+	fmt.Println(cols)
 
 	C := make([][]int, rows)
 	for i := range C {
