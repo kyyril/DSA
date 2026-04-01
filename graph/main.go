@@ -1,4 +1,5 @@
 package main
+
 import "fmt"
 
 type Graph struct {
@@ -21,10 +22,21 @@ func (g *Graph) AddVertex(k int) {
 }
 // add edge
 
+
+//print all
+func(g *Graph) Print(){
+	for _, v := range g.vertices {
+		fmt.Printf("\nvertex: %v", v.key)
+		for _, v := range v.adjacent {
+			fmt.Printf("%v", v.key)
+		}
+	}
+}
+
 func main(){
 	test := &Graph{}
 	for i:=1; i <= 5; i++ {
 		test.AddVertex(i)
 	}
-	fmt.Println(test)
+	test.Print()
 }
