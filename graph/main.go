@@ -34,6 +34,9 @@ func (g *Graph) AddEdge(from, to int){
 	if fromVertex == nil || toVertex == nil {
 		err := fmt.Errorf("invalid edge %v -> %v", from, to)
 		fmt.Println(err.Error())
+	}else if contains(fromVertex.adjacent, to) {
+		err := fmt.Errorf("existing edge %v -> %v", from, to)
+		fmt.Println(err.Error())
 	}else {
 		//add edge
 		fromVertex.adjacent = append(fromVertex.adjacent, toVertex) 
@@ -76,6 +79,7 @@ func main(){
 	}
 	test.AddVertex(1)
 	test.AddEdge(0,0)
+	test.AddEdge(1,2)
 	test.AddEdge(1,2)
 	test.Print()
 }
