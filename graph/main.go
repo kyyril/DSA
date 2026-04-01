@@ -26,7 +26,29 @@ func (g *Graph) AddVertex(k int) {
 	}
 }
 // add edge
+func (g *Graph) AddEdge(from, to int){
+	//get vertex
+	fromVertex := g.GetVertex(from)
+	toVertex := g.GetVertex(to)
+	//check error
+	if fromVertex == nil || toVertex == nil {
+		err := fmt.Errorf("invalid edge %v -> %v", from, to)
+		fmt.Println(err.Error())
+	}else {
+		//add edge
+		fromVertex.adjacent = append(fromVertex.adjacent, toVertex) 
+	}
+}
 
+//get vertex
+func (g *Graph) GetVertex(k int) *Vertex{
+	for i, v := range g.vertices {
+		if v.key == k {
+			return g.vertices[i]
+		}
+	}
+	return nil
+}
 
 //check contains
 func contains(s []*Vertex, k int) bool{
@@ -42,7 +64,7 @@ func(g *Graph) Print(){
 	for _, v := range g.vertices {
 		fmt.Printf("\nvertex: %v", v.key)
 		for _, v := range v.adjacent {
-			fmt.Printf("%v", v.key)
+			fmt.Printf("-> %v", v.key)
 		}
 	}
 }
@@ -52,6 +74,8 @@ func main(){
 	for i:=1; i <= 5; i++ {
 		test.AddVertex(i)
 	}
-	test.Print()
 	test.AddVertex(1)
+	test.AddEdge(0,0)
+	test.AddEdge(1,2)
+	test.Print()
 }
