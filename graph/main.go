@@ -18,11 +18,25 @@ type Vertex struct {
 
 // add vertex
 func (g *Graph) AddVertex(k int) {
-	g.vertices = append(g.vertices, &Vertex{key:k})
+	if contains(g.vertices, k){
+		err := fmt.Errorf("\nexisting key %v", k)
+		fmt.Println(err.Error())
+	}else {
+		g.vertices = append(g.vertices, &Vertex{key:k})
+	}
 }
 // add edge
 
 
+//check contains
+func contains(s []*Vertex, k int) bool{
+	for _, v := range s {
+		if k == v.key {
+			return true
+		}
+	}
+	return false
+}
 //print all
 func(g *Graph) Print(){
 	for _, v := range g.vertices {
@@ -39,4 +53,5 @@ func main(){
 		test.AddVertex(i)
 	}
 	test.Print()
+	test.AddVertex(1)
 }
