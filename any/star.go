@@ -2,12 +2,12 @@ package main
 
 import "fmt"
 
-func main() {
-	n := 5
-  fiveXfive(n) //5x5
-  fmt.Println("==================")
-  triangle(n)
-}
+// func main() {
+// 	n := 5
+//   fiveXfive(n) //5x5
+//   fmt.Println("==================")
+//   triangle(n)
+// }
 func fiveXfive(n int) {
   for i := 1; i <= n; i++ {
     for s:=1; s <= n; s++ {
