@@ -9,6 +9,8 @@ func(s *Stack[T]) Push(value T) {
 	s.elements = append(s.elements, value)
 }
 
+//take and delete element from last of elements
+// return element and condition
 func(s *Stack[T]) Pop() (T, bool){
 	if s.IsEmpty() {
 		var zeroValue T
