@@ -32,6 +32,12 @@ func (g *Graph) helperDfs(vertex string, visited map[string] bool) {
 	}
 }
 
+func (g *Graph) Display() {
+	for vertex, neighbors := range g.vertices {
+		fmt.Printf("%s -> %v\n", vertex, neighbors)
+	}
+}
+
 func main () {
 	network := NewGraph()
 
@@ -40,7 +46,8 @@ func main () {
 	network.AddEdge("Budi", "Dedi")
 	network.AddEdge("Cici", "Edo")
 	network.AddEdge("Dedi", "Edo") // Ini membuat siklus: Budi-Dedi-Edo-Cici-Andi
-
+	
+	network.Display()
 	// Jalankan DFS dimulai dari "Andi"
 	network.DFS("Andi")
 }

@@ -37,6 +37,11 @@ func (g *Graph) BFS(startVertex string) {
 	fmt.Println("end")
 }
 
+func (g *Graph) Display() {
+	for vertex, neighbors := range g.vertices {
+		fmt.Printf("%s -> %v\n", vertex, neighbors)
+	}
+}
 
 func main () {
 	network := NewGraph()
@@ -46,6 +51,7 @@ func main () {
 	network.AddEdge("Budi", "Dedi")
 	network.AddEdge("Cici", "Edo")
 	network.AddEdge("Dedi", "Edo")
+	network.Display()
 
 	network.BFS("Andi")
 
