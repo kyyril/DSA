@@ -8,17 +8,17 @@ type DirectedGraph struct {
 
 func NewDirectedGraph() *DirectedGraph {
 	return &DirectedGraph{vertices: make(map[string][]string)}
-	} 
+} 
 	
-	func(g *DirectedGraph) AddDirectedEdge(v1, v2 string){
-		g.vertices[v1] = append(g.vertices[v1], v2)
-	}
+func(g *DirectedGraph) AddDirectedEdge(v1, v2 string){
+	g.vertices[v1] = append(g.vertices[v1], v2)
+}
 	
-	//DFS 3-State
-	func(g *DirectedGraph) HasCycle() bool{
-		//record state each of point
-		//0:never; 1:current; 2:complate
-		state := make(map[string] int)
+//DFS 3-State
+func(g *DirectedGraph) HasCycle() bool{
+	//record state each of point
+	//0:never; 1:current; 2:complate
+	state := make(map[string] int)
 		
 	for vertex := range g.vertices {
 		if state[vertex] == 0 {
